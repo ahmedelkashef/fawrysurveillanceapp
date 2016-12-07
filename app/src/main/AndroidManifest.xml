@@ -44,7 +44,6 @@
         <activity
             android:name=".Activites.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".Activites.MessageActivity"></activity>
 
 
     </application>

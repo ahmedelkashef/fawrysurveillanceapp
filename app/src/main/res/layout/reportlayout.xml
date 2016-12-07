@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgapp">
+
+    <TextView
+        android:text="تقرير زيارة"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/holo_orange_light" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/location_txt"
+        android:hint="Location"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MerchantID_txt"
+        android:hint="Merchant ID "
+        android:fontFamily="sans-serif"
+        android:textSize="18sp" />
+
+    <ToggleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Near"
+        android:id="@+id/toggleButton" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/salesName_txt"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:hint="Sales Name" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/salesEmail_txt"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:hint="Email" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/salesId_txt"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:hint="ID" />
+
+</LinearLayout>
