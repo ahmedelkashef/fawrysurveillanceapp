@@ -5,14 +5,16 @@
     tools:context="com.example.cloudypedia.fawrysurveillanceapp.Fragments.MainFragment">
 
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/search_btn"
-        android:textColor="@android:color/white"
-        android:src="@drawable/findbtn2"
-        android:layout_marginTop="190dp"
-        android:background="@drawable/findbtn2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/find_by_terminalNo"
+        android:src="@drawable/findbyacountno"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center_horizontal"
+        android:background="#006790"
+        tools:scaleType="fitCenter"
+        android:layout_marginTop="107dp"
+        />
+
 </RelativeLayout>

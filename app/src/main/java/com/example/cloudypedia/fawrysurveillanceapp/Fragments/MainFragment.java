@@ -2,16 +2,17 @@ package com.example.cloudypedia.fawrysurveillanceapp.Fragments;
 
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.cloudypedia.fawrysurveillanceapp.AdressDialog;
 import com.example.cloudypedia.fawrysurveillanceapp.Classes.GPSHandller;
 import com.example.cloudypedia.fawrysurveillanceapp.DataFetcher.FetchLocationTask;
 import com.example.cloudypedia.fawrysurveillanceapp.R;
@@ -22,7 +23,7 @@ import com.example.cloudypedia.fawrysurveillanceapp.R;
  */
 public class MainFragment extends Fragment {
 
-    Button searchByNearest;
+    ImageButton searchByTerminalId;
     ProgressDialog progressDialog;
 
     public MainFragment() {
@@ -46,11 +47,12 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-        searchByNearest = (Button) rootView.findViewById(R.id.search_btn);
-        searchByNearest.setOnClickListener(new View.OnClickListener() {
+        searchByTerminalId = (ImageButton) rootView.findViewById(R.id.find_by_terminalNo);
+        searchByTerminalId.setOnClickListener(new View.OnClickListener() {
                                                @Override
                                                public void onClick(View view) {
                                                    OnDisplayClick(view);
+
                                                }
                                            }
         );
@@ -58,14 +60,18 @@ public class MainFragment extends Fragment {
         return rootView ;
     }
 
+    public void btnFindByTerminalNo(View V){
+        AdressDialog newFragment = new AdressDialog();
+        newFragment.setType(AdressDialog.TYPE.TERMINALNO);
+        newFragment.show( getFragmentManager(), "البحث برقم التاجر");
+    }
+
     public void OnDisplayClick(View view){
 
-        final GPSHandller gpsHandller = new GPSHandller(getContext());
+        final GPSHandller gpsHandller = new GPSHandller(MainFragment.this.getActivity());
         
                 if (gpsHandller.isCanGetLocation()) {
-                    progressDialog = ProgressDialog.show(getContext(),"","Loading Please Wait",true);
-                    FetchLocationTask fetchLocationTask = new FetchLocationTask(getContext(),progressDialog);
-                    fetchLocationTask.execute();
+                    btnFindByTerminalNo(view);
                 }
                 else if(!gpsHandller.isGPSEnabled())
                 {
